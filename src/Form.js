@@ -21,11 +21,6 @@ class Form extends React.Component {
 
 		fetch( `./mailHunter.php?domain=${ domain }&path=${ path }` )
 		.then( ( response ) => {
-			try {
-				JSON.parse( response );
-			} catch ( e ) {
-				return [ "An error has occured. Please make sure provided data are correct." ];
-			}
 			return response.json();
 		} )
 		.then( ( data )=> {
